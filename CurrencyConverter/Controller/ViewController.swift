@@ -32,6 +32,12 @@ class ViewController: UIViewController, UIPickerViewDataSource {
     }
     
     @IBAction func onConvertButtonPressed(_ sender: UIButton) {
+        currDataManager.getValueInHrkForDate(for: pickedCurrency, for: "2020-04-03") { (currencies) in
+            DispatchQueue.main.async {
+                print(currencies)
+            }
+        }
+        
         
         if let currency = pickedCurrency, let value = Decimal(string: valueTextField.text!) {
             currDataManager.getValueInHrk(for: currency) { (currencies) in

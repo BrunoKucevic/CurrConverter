@@ -12,6 +12,7 @@ class CurrencyDataManager {
     
     let baseUrl = "https://api.hnb.hr/tecajn/v1"
     let baseUrlForCurrency = "https://api.hnb.hr/tecajn/v1?valuta="
+    let baseUrlForAllCurrenciesOnSpecificDate = "https://api.hnb.hr/tecajn/v1?datum="
     var currencyModel = [CurrencyModel]()
     var currArray = [String]()
     
@@ -48,7 +49,29 @@ class CurrencyDataManager {
             }
         }
         else{
-            
+            return
+        }
+    }
+    
+    func getValueInHrkForDate(for currency: String?, for date: String?, callback: @escaping ([CurrencyModel]) -> Void){
+        //currArray = []
+        currencyModel = []
+        //"http://api.hnb.hr/tecajn/v1?datum=2014-03-02"
+        if let date = date{
+            let url = "\(baseUrlForAllCurrenciesOnSpecificDate)\(date)"
+            JSONDecodeHandler().fetch(for: url) { (result: Result<[CurrencyModel], RequestError>) in
+                switch result{
+                case .success(let currs):
+                    currs.forEach { (currencyModel) in
+                        self.currencyModel.append(currencyModel)
+                    }
+                    callback(self.currencyModel)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+        else{
             return
         }
     }
