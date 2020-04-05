@@ -21,15 +21,3 @@ extension UIViewController{
         self.present(alertController, animated: true, completion: nil)
     }
 }
-
-//class Alert{
-//    func showAlertControllerCustom(title : String, message: String, viewcontroller : UIViewController, callback: @escaping () -> Void){
-//        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-//        let alertAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-//            callback()
-//        })
-//        alertAction.setValue(UIColor.red, forKey: "titleTextColor")
-//        alertController.addAction(alertAction)
-//        viewcontroller.present(alertController, animated: true, completion: nil)
-//    }
-//}

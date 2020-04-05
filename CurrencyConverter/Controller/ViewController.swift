@@ -27,11 +27,8 @@ class ViewController: UIViewController, UIPickerViewDataSource {
             DispatchQueue.main.async {
                 self.stringArray = currencies
                 self.currencyPicker.reloadAllComponents()
-                //self.valueTextField.text = currency[2]
             }     
         }
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func onConvertButtonPressed(_ sender: UIButton) {
@@ -93,7 +90,6 @@ extension ViewController: UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         valueTextField.endEditing(true);
-        print(valueTextField.text!)
         return true;
     }
     

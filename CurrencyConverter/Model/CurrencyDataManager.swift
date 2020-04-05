@@ -39,7 +39,6 @@ class CurrencyDataManager {
                 switch result{
                 case .success(let currs):
                     currs.forEach { (currencyModel) in
-                        //self.currArray.append(currencyModel.srednjiZaDevize)
                         self.currencyModel.append(currencyModel)
                     }
                     callback(self.currencyModel)
