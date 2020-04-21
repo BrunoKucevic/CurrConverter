@@ -81,7 +81,7 @@ extension ViewController: UIPickerViewDelegate{
                 print(self.stringArray[row])
                 self.currencyPicker.reloadAllComponents()
                 self.converterResultLabel.text = currencies[0].srednjiZaDevize
-                self.showAlertControllerCustom(title: "Obavijest", message: "Na datum \(currencies[0].datumPrimjene) vrijednost je \(currencies[0].srednjiZaDevize)") {
+                self.showAlertControllerCustom(title: "Obavijest", message: "Na datum \(currencies[0].datumPrimjene) vrijednost je \(currencies[0].srednjiZaDevize). Želite li spremiti pretragu?") {
                     if let srednji = currencies[0].srednjiDouble{
                         self.currencyValue = srednji
                     }

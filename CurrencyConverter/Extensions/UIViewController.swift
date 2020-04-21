@@ -16,8 +16,10 @@ extension UIViewController{
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
             callback()
         })
+        let alertActionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertAction.setValue(UIColor.red, forKey: "titleTextColor")
         alertController.addAction(alertAction)
+        alertController.addAction(alertActionCancel)
         self.present(alertController, animated: true, completion: nil)
     }
 }
