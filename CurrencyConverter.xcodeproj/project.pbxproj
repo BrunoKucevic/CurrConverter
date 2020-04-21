@@ -19,9 +19,11 @@
 		93F9B4F8241FA6AB0001A5C0 /* CurrencyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F9B4F7241FA6AB0001A5C0 /* CurrencyDataManager.swift */; };
 		93F9B4FB241FDD090001A5C0 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F9B4FA241FDD090001A5C0 /* RequestError.swift */; };
 		93F9B51E242682460001A5C0 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F9B51D242682460001A5C0 /* UIViewController.swift */; };
+		97F6C49262F1EDE778502E2B /* Pods_CurrencyConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC295A4B18753D1C70517512 /* Pods_CurrencyConverter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50FA1D984EC8D4865A320FB2 /* Pods-CurrencyConverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter.release.xcconfig"; path = "Target Support Files/Pods-CurrencyConverter/Pods-CurrencyConverter.release.xcconfig"; sourceTree = "<group>"; };
 		935B6EBC244F18F700DE3D46 /* CurrencyConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterViewController.swift; sourceTree = "<group>"; };
 		93F9B4D9241E23AB0001A5C0 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F9B4DC241E23AB0001A5C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		93F9B4F7241FA6AB0001A5C0 /* CurrencyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDataManager.swift; sourceTree = "<group>"; };
 		93F9B4FA241FDD090001A5C0 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		93F9B51D242682460001A5C0 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		EC295A4B18753D1C70517512 /* Pods_CurrencyConverter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyConverter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F638C8CBDF5FA36B8D511340 /* Pods-CurrencyConverter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyConverter/Pods-CurrencyConverter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +47,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97F6C49262F1EDE778502E2B /* Pods_CurrencyConverter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		244E5ED2DFBA98A31A8961E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC295A4B18753D1C70517512 /* Pods_CurrencyConverter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B1343783BD731BAC1D3866D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F638C8CBDF5FA36B8D511340 /* Pods-CurrencyConverter.debug.xcconfig */,
+				50FA1D984EC8D4865A320FB2 /* Pods-CurrencyConverter.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		93F9B4D0241E23AB0001A5C0 = {
 			isa = PBXGroup;
 			children = (
 				93F9B4DB241E23AB0001A5C0 /* CurrencyConverter */,
 				93F9B4DA241E23AB0001A5C0 /* Products */,
+				6B1343783BD731BAC1D3866D /* Pods */,
+				244E5ED2DFBA98A31A8961E5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,9 +149,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93F9B4ED241E23AF0001A5C0 /* Build configuration list for PBXNativeTarget "CurrencyConverter" */;
 			buildPhases = (
+				26A1E347CC909A3F7C43E8D4 /* [CP] Check Pods Manifest.lock */,
 				93F9B4D5241E23AB0001A5C0 /* Sources */,
 				93F9B4D6241E23AB0001A5C0 /* Frameworks */,
 				93F9B4D7241E23AB0001A5C0 /* Resources */,
+				63E265AF0C48BB67B65A3882 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -182,6 +209,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26A1E347CC909A3F7C43E8D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CurrencyConverter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63E265AF0C48BB67B65A3882 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyConverter/Pods-CurrencyConverter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyConverter/Pods-CurrencyConverter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CurrencyConverter/Pods-CurrencyConverter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		93F9B4D5241E23AB0001A5C0 /* Sources */ = {
@@ -338,6 +407,7 @@
 		};
 		93F9B4EE241E23AF0001A5C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F638C8CBDF5FA36B8D511340 /* Pods-CurrencyConverter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -356,6 +426,7 @@
 		};
 		93F9B4EF241E23AF0001A5C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50FA1D984EC8D4865A320FB2 /* Pods-CurrencyConverter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
