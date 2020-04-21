@@ -34,9 +34,10 @@ class CurrencyConverterViewController: UIViewController, UIPickerViewDataSource 
     }
 
     @IBAction func onConvertButtonPressed(_ sender: UIButton) {
+        /*TODO: change hardcoded date*/
         currDataManager.getValueInHrkForDate(for: pickedCurrency, for: "2020-04-03") { (currencies) in
             DispatchQueue.main.async {
-                print(currencies)
+                //print(currencies)
             }
         }
 
@@ -81,7 +82,7 @@ extension CurrencyConverterViewController: UIPickerViewDelegate{
         pickedCurrency = stringArray[row]
         currDataManager.getValueInHrk(for: stringArray[row]) { (currencies) in
             DispatchQueue.main.async {
-                print(self.stringArray[row])
+                //print(self.stringArray[row])
                 self.currencyPicker.reloadAllComponents()
                 self.converterResultLabel.text = currencies[0].srednjiZaDevize
                 self.showAlertControllerCustom(title: "Obavijest", message: "Na datum \(currencies[0].datumPrimjene) vrijednost je \(currencies[0].srednjiZaDevize). Želite li spremiti pretragu?") {
