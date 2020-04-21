@@ -3,14 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		935B6EBD244F18F700DE3D46 /* CurrencyConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935B6EBC244F18F700DE3D46 /* CurrencyConverterViewController.swift */; };
+		935B6EBF244F38A000DE3D46 /* CurrencyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935B6EBE244F38A000DE3D46 /* CurrencyItem.swift */; };
+		935B6EC2244F396D00DE3D46 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935B6EC1244F396D00DE3D46 /* RealmService.swift */; };
 		93F9B4DD241E23AB0001A5C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F9B4DC241E23AB0001A5C0 /* AppDelegate.swift */; };
 		93F9B4DF241E23AB0001A5C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F9B4DE241E23AB0001A5C0 /* SceneDelegate.swift */; };
-		93F9B4E1241E23AB0001A5C0 /* Vc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F9B4E0241E23AB0001A5C0 /* Vc.swift */; };
 		93F9B4E4241E23AB0001A5C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F9B4E2241E23AB0001A5C0 /* Main.storyboard */; };
 		93F9B4E6241E23AF0001A5C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93F9B4E5241E23AF0001A5C0 /* Assets.xcassets */; };
 		93F9B4E9241E23AF0001A5C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F9B4E7241E23AF0001A5C0 /* LaunchScreen.storyboard */; };
@@ -25,10 +26,11 @@
 /* Begin PBXFileReference section */
 		50FA1D984EC8D4865A320FB2 /* Pods-CurrencyConverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter.release.xcconfig"; path = "Target Support Files/Pods-CurrencyConverter/Pods-CurrencyConverter.release.xcconfig"; sourceTree = "<group>"; };
 		935B6EBC244F18F700DE3D46 /* CurrencyConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterViewController.swift; sourceTree = "<group>"; };
+		935B6EBE244F38A000DE3D46 /* CurrencyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyItem.swift; sourceTree = "<group>"; };
+		935B6EC1244F396D00DE3D46 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		93F9B4D9241E23AB0001A5C0 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F9B4DC241E23AB0001A5C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F9B4DE241E23AB0001A5C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		93F9B4E0241E23AB0001A5C0 /* Vc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vc.swift; sourceTree = "<group>"; };
 		93F9B4E3241E23AB0001A5C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93F9B4E5241E23AF0001A5C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93F9B4E8241E23AF0001A5C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,8 +70,15 @@
 				F638C8CBDF5FA36B8D511340 /* Pods-CurrencyConverter.debug.xcconfig */,
 				50FA1D984EC8D4865A320FB2 /* Pods-CurrencyConverter.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		935B6EC0244F394800DE3D46 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				935B6EC1244F396D00DE3D46 /* RealmService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		93F9B4D0241E23AB0001A5C0 = {
@@ -94,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				93F9B51C242682320001A5C0 /* Extensions */,
+				935B6EC0244F394800DE3D46 /* Services */,
 				93F9B4F2241F9CD80001A5C0 /* Controller */,
 				93F9B4F1241F9CCE0001A5C0 /* View */,
 				93F9B4F0241F9CC80001A5C0 /* Model */,
@@ -113,6 +123,7 @@
 				93F9B4F5241FA1F20001A5C0 /* JSONDecodeHandler.swift */,
 				93F9B4F7241FA6AB0001A5C0 /* CurrencyDataManager.swift */,
 				93F9B4FA241FDD090001A5C0 /* RequestError.swift */,
+				935B6EBE244F38A000DE3D46 /* CurrencyItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,7 +139,6 @@
 		93F9B4F2241F9CD80001A5C0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				93F9B4E0241E23AB0001A5C0 /* Vc.swift */,
 				935B6EBC244F18F700DE3D46 /* CurrencyConverterViewController.swift */,
 			);
 			path = Controller;
@@ -258,7 +268,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				93F9B4FB241FDD090001A5C0 /* RequestError.swift in Sources */,
-				93F9B4E1241E23AB0001A5C0 /* Vc.swift in Sources */,
 				93F9B4DD241E23AB0001A5C0 /* AppDelegate.swift in Sources */,
 				935B6EBD244F18F700DE3D46 /* CurrencyConverterViewController.swift in Sources */,
 				93F9B4F6241FA1F20001A5C0 /* JSONDecodeHandler.swift in Sources */,
@@ -266,6 +275,8 @@
 				93F9B4F4241F9CFD0001A5C0 /* CurrencyModel.swift in Sources */,
 				93F9B4F8241FA6AB0001A5C0 /* CurrencyDataManager.swift in Sources */,
 				93F9B4DF241E23AB0001A5C0 /* SceneDelegate.swift in Sources */,
+				935B6EBF244F38A000DE3D46 /* CurrencyItem.swift in Sources */,
+				935B6EC2244F396D00DE3D46 /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
