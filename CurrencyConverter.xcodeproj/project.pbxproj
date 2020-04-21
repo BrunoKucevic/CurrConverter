@@ -10,6 +10,9 @@
 		935B6EBD244F18F700DE3D46 /* CurrencyConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935B6EBC244F18F700DE3D46 /* CurrencyConverterViewController.swift */; };
 		935B6EBF244F38A000DE3D46 /* CurrencyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935B6EBE244F38A000DE3D46 /* CurrencyItem.swift */; };
 		935B6EC2244F396D00DE3D46 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935B6EC1244F396D00DE3D46 /* RealmService.swift */; };
+		935B6EC4244F694900DE3D46 /* ConverterHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935B6EC3244F694900DE3D46 /* ConverterHistoryViewController.swift */; };
+		935B6ECB244F6B4C00DE3D46 /* ConverterHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935B6EC9244F6B4C00DE3D46 /* ConverterHistoryTableViewCell.swift */; };
+		935B6ECC244F6B4C00DE3D46 /* ConverterHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 935B6ECA244F6B4C00DE3D46 /* ConverterHistoryTableViewCell.xib */; };
 		93F9B4DD241E23AB0001A5C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F9B4DC241E23AB0001A5C0 /* AppDelegate.swift */; };
 		93F9B4DF241E23AB0001A5C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F9B4DE241E23AB0001A5C0 /* SceneDelegate.swift */; };
 		93F9B4E4241E23AB0001A5C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F9B4E2241E23AB0001A5C0 /* Main.storyboard */; };
@@ -28,6 +31,9 @@
 		935B6EBC244F18F700DE3D46 /* CurrencyConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterViewController.swift; sourceTree = "<group>"; };
 		935B6EBE244F38A000DE3D46 /* CurrencyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyItem.swift; sourceTree = "<group>"; };
 		935B6EC1244F396D00DE3D46 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		935B6EC3244F694900DE3D46 /* ConverterHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterHistoryViewController.swift; sourceTree = "<group>"; };
+		935B6EC9244F6B4C00DE3D46 /* ConverterHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		935B6ECA244F6B4C00DE3D46 /* ConverterHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConverterHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		93F9B4D9241E23AB0001A5C0 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F9B4DC241E23AB0001A5C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F9B4DE241E23AB0001A5C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				93F9B4E2241E23AB0001A5C0 /* Main.storyboard */,
+				935B6EC9244F6B4C00DE3D46 /* ConverterHistoryTableViewCell.swift */,
+				935B6ECA244F6B4C00DE3D46 /* ConverterHistoryTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				935B6EBC244F18F700DE3D46 /* CurrencyConverterViewController.swift */,
+				935B6EC3244F694900DE3D46 /* ConverterHistoryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93F9B4E9241E23AF0001A5C0 /* LaunchScreen.storyboard in Resources */,
+				935B6ECC244F6B4C00DE3D46 /* ConverterHistoryTableViewCell.xib in Resources */,
 				93F9B4E6241E23AF0001A5C0 /* Assets.xcassets in Resources */,
 				93F9B4E4241E23AB0001A5C0 /* Main.storyboard in Resources */,
 			);
@@ -269,10 +279,12 @@
 			files = (
 				93F9B4FB241FDD090001A5C0 /* RequestError.swift in Sources */,
 				93F9B4DD241E23AB0001A5C0 /* AppDelegate.swift in Sources */,
+				935B6EC4244F694900DE3D46 /* ConverterHistoryViewController.swift in Sources */,
 				935B6EBD244F18F700DE3D46 /* CurrencyConverterViewController.swift in Sources */,
 				93F9B4F6241FA1F20001A5C0 /* JSONDecodeHandler.swift in Sources */,
 				93F9B51E242682460001A5C0 /* UIViewController.swift in Sources */,
 				93F9B4F4241F9CFD0001A5C0 /* CurrencyModel.swift in Sources */,
+				935B6ECB244F6B4C00DE3D46 /* ConverterHistoryTableViewCell.swift in Sources */,
 				93F9B4F8241FA6AB0001A5C0 /* CurrencyDataManager.swift in Sources */,
 				93F9B4DF241E23AB0001A5C0 /* SceneDelegate.swift in Sources */,
 				935B6EBF244F38A000DE3D46 /* CurrencyItem.swift in Sources */,

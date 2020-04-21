@@ -7,23 +7,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="GuL-WU-5Tp">
             <objects>
                 <viewController id="NOE-jc-d6O" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DOA-pu-A3J">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Og6-ZI-8f2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="lfj-5P-fcv"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Cu2-Cc-MK3"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="Cu2-Cc-MK3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JE9-H2-el9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1620" y="415"/>
+            <point key="canvasLocation" x="-1620.289855072464" y="414.50892857142856"/>
         </scene>
-        <!--Item 1-->
+        <!--Currency Converter View Controller-->
         <scene sceneID="Ctn-Ni-OkD">
             <objects>
                 <viewController id="Z42-jT-PgE" customClass="CurrencyConverterViewController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
@@ -66,10 +73,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.68595319260811549" green="1" blue="0.77336178806620204" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="X9R-vg-6ee"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="146-pW-aoG"/>
+                    <tabBarItem key="tabBarItem" selectedImage="dollarsign.square" catalog="system" id="146-pW-aoG"/>
                     <connections>
                         <outlet property="converterResultLabel" destination="iUi-xV-qrP" id="heG-tw-GwY"/>
                         <outlet property="currencyPicker" destination="dw9-nX-GIA" id="7jD-5D-lz1"/>
@@ -88,6 +95,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Z42-jT-PgE" kind="relationship" relationship="viewControllers" id="rY3-8i-2sx"/>
@@ -99,4 +107,7 @@
             <point key="canvasLocation" x="-2541" y="91"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dollarsign.square" catalog="system" width="128" height="114"/>
+    </resources>
 </document>
