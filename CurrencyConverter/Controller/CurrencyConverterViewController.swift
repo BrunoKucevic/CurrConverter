@@ -14,13 +14,12 @@ class CurrencyConverterViewController: UIViewController, UIPickerViewDataSource 
     var stringArray : [String] = []
     var currencyValue : NSDecimalNumber = 0.0
     var pickedCurrency : String?
+    let formatter = DateFormatter()
     @IBOutlet weak var converterResultLabel: UILabel!
     @IBOutlet weak var valueTextField: UITextField!
     @IBOutlet weak var currencyPicker: UIPickerView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
         super.viewDidLoad()
         currencyPicker.delegate = self
         currencyPicker.dataSource = self
@@ -31,11 +30,13 @@ class CurrencyConverterViewController: UIViewController, UIPickerViewDataSource 
                 self.currencyPicker.reloadAllComponents()
             }
         }
+        formatter.dateFormat = "yyyy-MM-dd"
     }
 
     @IBAction func onConvertButtonPressed(_ sender: UIButton) {
         /*TODO: change hardcoded date*/
-        currDataManager.getValueInHrkForDate(for: pickedCurrency, for: "2020-04-03") { (currencies) in
+print(formatter.string(from: Date()))
+        currDataManager.getValueInHrkForDate(for: pickedCurrency, for: formatter.string(from: Date())) { (currencies) in
             DispatchQueue.main.async {
                 //print(currencies)
             }
