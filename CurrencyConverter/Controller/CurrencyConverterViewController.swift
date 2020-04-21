@@ -1,24 +1,26 @@
 //
-//  ViewController.swift
+//  CurrencyConverterViewController.swift
 //  CurrencyConverter
 //
-//  Created by Bruno Kučević on 15/03/2020.
+//  Created by Bruno Kučević on 21/04/2020.
 //  Copyright © 2020 Bruno Kučević. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource {
-    
+class CurrencyConverterViewController: UIViewController, UIPickerViewDataSource {
+
     var currDataManager = CurrencyDataManager()
     var stringArray : [String] = []
     var currencyValue : NSDecimalNumber = 0.0
     var pickedCurrency : String?
-    @IBOutlet weak var currencyPicker: UIPickerView!
-    @IBOutlet weak var valueTextField: UITextField!
     @IBOutlet weak var converterResultLabel: UILabel!
+    @IBOutlet weak var valueTextField: UITextField!
+    @IBOutlet weak var currencyPicker: UIPickerView!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+
         super.viewDidLoad()
         currencyPicker.delegate = self
         currencyPicker.dataSource = self
@@ -27,27 +29,27 @@ class ViewController: UIViewController, UIPickerViewDataSource {
             DispatchQueue.main.async {
                 self.stringArray = currencies
                 self.currencyPicker.reloadAllComponents()
-            }     
+            }
         }
     }
-    
+
     @IBAction func onConvertButtonPressed(_ sender: UIButton) {
         currDataManager.getValueInHrkForDate(for: pickedCurrency, for: "2020-04-03") { (currencies) in
             DispatchQueue.main.async {
                 print(currencies)
             }
         }
-        
-        
+
+
         if let currency = pickedCurrency, let value = Decimal(string: valueTextField.text!) {
             currDataManager.getValueInHrk(for: currency) { (currencies) in
                 DispatchQueue.main.async {
                     self.currencyPicker.reloadAllComponents()
                     self.converterResultLabel.text = currencies[0].srednjiZaDevize
                     guard let srednji = currencies[0].srednjiDouble else {return}
-                    
+
                     self.currencyValue = srednji.multiplying(by: NSDecimalNumber(decimal: value))
-                    
+
                     self.converterResultLabel.text = String(format: "%@", self.currencyValue)
                 }
             }
@@ -59,8 +61,9 @@ class ViewController: UIViewController, UIPickerViewDataSource {
     }
     
 }
+
 //MARK: - UIPickerViewDelegate
-extension ViewController: UIPickerViewDelegate{
+extension CurrencyConverterViewController: UIPickerViewDelegate{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1;
     }
@@ -92,7 +95,7 @@ extension ViewController: UIPickerViewDelegate{
     }
 }
 //MARK: - UITextFieldDelegate
-extension ViewController: UITextFieldDelegate{
+extension CurrencyConverterViewController: UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         valueTextField.endEditing(true);
@@ -119,5 +122,3 @@ extension ViewController: UITextFieldDelegate{
         return string == numberFiltered
     }
 }
-
-
