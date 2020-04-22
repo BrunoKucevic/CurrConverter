@@ -11,6 +11,19 @@ import RealmSwift
 
 class CurrencyItem: Object{
     @objc dynamic var foreignCurrency : String = ""
-    @objc dynamic var value : NSDecimalNumber = 0.0
+    @objc dynamic var value : Double = 0.0
     @objc dynamic var dateAdded : Date?
+    
+    var dateString : String?{
+        if let date = dateAdded {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd-MMM-yyyy"
+            
+            return formatter.string(from: date)
+        }
+        else{
+            return nil
+        }
+        //return ""
+    }
 }

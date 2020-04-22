@@ -9,12 +9,14 @@
 import UIKit
 
 class CurrencyConverterViewController: UIViewController, UIPickerViewDataSource {
-
+    
     var currDataManager = CurrencyDataManager()
     var stringArray : [String] = []
     var currencyValue : NSDecimalNumber = 0.0
     var pickedCurrency : String?
     let formatter = DateFormatter()
+    var pickerRow : Int = 0;
+    
     @IBOutlet weak var converterResultLabel: UILabel!
     @IBOutlet weak var valueTextField: UITextField!
     @IBOutlet weak var currencyPicker: UIPickerView!
@@ -32,32 +34,26 @@ class CurrencyConverterViewController: UIViewController, UIPickerViewDataSource 
         }
         formatter.dateFormat = "yyyy-MM-dd"
     }
-
+    
     @IBAction func onConvertButtonPressed(_ sender: UIButton) {
-        /*TODO: change hardcoded date*/
-print(formatter.string(from: Date()))
-        currDataManager.getValueInHrkForDate(for: pickedCurrency, for: formatter.string(from: Date())) { (currencies) in
+        guard let pickedCurr = pickedCurrency, let value = Decimal(string: self.valueTextField.text!) else {return}
+        currDataManager.getValueInHrkForDate(for: pickedCurr, for: formatter.string(from: Date())) { (currencies) in
             DispatchQueue.main.async {
-                //print(currencies)
-            }
-        }
+                self.pickerRow = self.currencyPicker.selectedRow(inComponent: 0)
+                guard let srednji = currencies[self.pickerRow].srednjiDouble else {return}
+                
+                self.currencyValue = srednji.multiplying(by: NSDecimalNumber(decimal: value))
+                
+                self.converterResultLabel.text = String(format: "%@", self.currencyValue)
+                self.showAlertControllerCustom(title: "Obavijest", message: "Na datum \(currencies[self.pickerRow].datumPrimjene) srednji tečaj valute \(currencies[self.pickerRow].valuta) je \(self.currencyValue). Želite li spremiti pretragu?") {
 
-
-        if let currency = pickedCurrency, let value = Decimal(string: valueTextField.text!) {
-            currDataManager.getValueInHrk(for: currency) { (currencies) in
-                DispatchQueue.main.async {
-                    self.currencyPicker.reloadAllComponents()
-                    self.converterResultLabel.text = currencies[0].srednjiZaDevize
-                    guard let srednji = currencies[0].srednjiDouble else {return}
-
-                    self.currencyValue = srednji.multiplying(by: NSDecimalNumber(decimal: value))
-
-                    self.converterResultLabel.text = String(format: "%@", self.currencyValue)
+                    let item = CurrencyItem()
+                    item.foreignCurrency = currencies[self.pickerRow].valuta
+                    item.value = Double(srednji)
+                    item.dateAdded = Date()
+                    RealmService.shared.save(item)
                 }
             }
-        }
-        else{
-            /*TODO: error*/
         }
         valueTextField.endEditing(true)
     }
@@ -71,8 +67,7 @@ extension CurrencyConverterViewController: UIPickerViewDelegate{
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return stringArray.count//currDataManager.currencyModel.count /*TODO: return the number of currencies
-        //that get returned from the api*/;
+        return stringArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -81,17 +76,10 @@ extension CurrencyConverterViewController: UIPickerViewDelegate{
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickedCurrency = stringArray[row]
-        currDataManager.getValueInHrk(for: stringArray[row]) { (currencies) in
+        currDataManager.getValueInHrk(for: stringArray[row] ) { (currency) in
             DispatchQueue.main.async {
-                //print(self.stringArray[row])
                 self.currencyPicker.reloadAllComponents()
-                self.converterResultLabel.text = currencies[0].srednjiZaDevize
-                self.showAlertControllerCustom(title: "Obavijest", message: "Na datum \(currencies[0].datumPrimjene) vrijednost je \(currencies[0].srednjiZaDevize). Želite li spremiti pretragu?") {
-                    if let srednji = currencies[0].srednjiDouble{
-                        self.currencyValue = srednji
-                    }
-                    
-                }
+                self.converterResultLabel.text = currency[0].srednjiZaDevize
             }
         }
     }

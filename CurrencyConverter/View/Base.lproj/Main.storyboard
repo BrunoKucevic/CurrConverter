@@ -7,11 +7,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Converter History View Controller-->
         <scene sceneID="GuL-WU-5Tp">
             <objects>
-                <viewController id="NOE-jc-d6O" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DOA-pu-A3J">
+                <viewController id="NOE-jc-d6O" customClass="ConverterHistoryViewController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DOA-pu-A3J" customClass="ConverterHistoryTableViewCell" customModule="CurrencyConverter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -25,6 +25,9 @@
                         <viewLayoutGuide key="safeArea" id="lfj-5P-fcv"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="Cu2-Cc-MK3"/>
+                    <connections>
+                        <outlet property="tableView" destination="Og6-ZI-8f2" id="tFa-N2-Uxy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JE9-H2-el9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,14 +45,14 @@
                                 <rect key="frame" x="90" y="154" width="234" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.39062809752445293" green="0.42296266858777154" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUi-xV-qrP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUi-xV-qrP">
                                 <rect key="frame" x="140" y="271" width="134" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.39062809749999999" green="0.42296266859999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dw9-nX-GIA">
@@ -60,7 +63,7 @@
                                 <rect key="frame" x="180" y="570" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Convert">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.39062809749999999" green="0.42296266859999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="onConvertButtonPressed:" destination="Z42-jT-PgE" eventType="touchUpInside" id="jCG-JH-7mI"/>
@@ -76,7 +79,7 @@
                         <color key="backgroundColor" red="0.68595319260811549" green="1" blue="0.77336178806620204" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="X9R-vg-6ee"/>
                     </view>
-                    <tabBarItem key="tabBarItem" selectedImage="dollarsign.square" catalog="system" id="146-pW-aoG"/>
+                    <tabBarItem key="tabBarItem" selectedImage="pencil" catalog="system" systemItem="favorites" id="146-pW-aoG"/>
                     <connections>
                         <outlet property="converterResultLabel" destination="iUi-xV-qrP" id="heG-tw-GwY"/>
                         <outlet property="currencyPicker" destination="dw9-nX-GIA" id="7jD-5D-lz1"/>
@@ -95,7 +98,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Z42-jT-PgE" kind="relationship" relationship="viewControllers" id="rY3-8i-2sx"/>
@@ -108,6 +110,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dollarsign.square" catalog="system" width="128" height="114"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
     </resources>
 </document>

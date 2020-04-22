@@ -10,6 +10,10 @@ import UIKit
 
 class ConverterHistoryTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var currencyInfoLabel: UILabel!
+    @IBOutlet weak var currencyInfoDateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
