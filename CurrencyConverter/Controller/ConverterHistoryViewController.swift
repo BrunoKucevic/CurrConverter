@@ -13,11 +13,18 @@ class ConverterHistoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var currencyItemArray : Results<CurrencyItem>?
+    var notificationToken : NotificationToken?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ConverterHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrencyHistoryReusableCell")
+        notificationToken = RealmService.shared.realm.observe { (notification, realm) in
+            self.tableView.reloadData()
+        }
+        RealmService.shared.observeForRealmErrors(in: self) { (error) in
+            print(error!)
+        }
         loadItems()
     }
     
@@ -25,9 +32,12 @@ class ConverterHistoryViewController: UIViewController {
         loadItems()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        notificationToken?.invalidate()
+    }
+    
     func loadItems(){
         currencyItemArray = RealmService.shared.realm.objects(CurrencyItem.self)
-        tableView.reloadData()
     }
 }
 
@@ -52,7 +62,6 @@ extension ConverterHistoryViewController : UITableViewDelegate{
         let deleteAction = UIContextualAction(style: .normal, title: "Delete") { (ac, view, success: (Bool) -> Void) in
             guard let item = self.currencyItemArray?[indexPath.row] else {return}
             RealmService.shared.delete(item)
-            tableView.reloadData()
             success(true)
         }
         deleteAction.backgroundColor = .red
