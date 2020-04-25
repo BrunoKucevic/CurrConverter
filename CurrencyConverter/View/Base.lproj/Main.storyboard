@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o1f-cX-M2F">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="NOE-jc-d6O" customClass="ConverterHistoryViewController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DOA-pu-A3J" customClass="ConverterHistoryTableViewCell" customModule="CurrencyConverter" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Og6-ZI-8f2">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -43,11 +43,11 @@
             <objects>
                 <viewController id="Z42-jT-PgE" customClass="CurrencyConverterViewController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sPw-wn-1lU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUi-xV-qrP">
-                                <rect key="frame" x="60" y="234" width="294" height="60"/>
+                                <rect key="frame" x="60" y="-60" width="200" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Ib3-6O-A7E"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="qw3-bf-bvT"/>
@@ -57,14 +57,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dw9-nX-GIA">
-                                <rect key="frame" x="0.0" y="338" width="414" height="162"/>
+                                <rect key="frame" x="0.0" y="44" width="226" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="162" id="rOP-w2-8al"/>
                                     <constraint firstAttribute="height" constant="162" id="sOv-J7-2e3"/>
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSp-NA-ebB">
-                                <rect key="frame" x="60" y="682" width="294" height="50"/>
+                                <rect key="frame" x="60" y="388" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RWR-IW-20K"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Sch-dT-G8p"/>
@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HS0-kA-BAa">
-                                <rect key="frame" x="60" y="588" width="294" height="50"/>
+                                <rect key="frame" x="60" y="294" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DKW-56-I64"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="ItB-Fx-8QH"/>
@@ -86,7 +86,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convert currency into HRK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLg-g7-EH3">
-                                <rect key="frame" x="60" y="107" width="294" height="83"/>
+                                <rect key="frame" x="60" y="-187" width="200" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="83" id="Qdr-Ri-KbX"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="83" id="VkO-Rs-UMx"/>
