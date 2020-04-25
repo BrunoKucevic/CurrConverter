@@ -59,9 +59,11 @@
                                 <rect key="frame" x="0.0" y="338" width="414" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSp-NA-ebB">
-                                <rect key="frame" x="180" y="570" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSp-NA-ebB">
+                                <rect key="frame" x="60" y="682" width="294" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RWR-IW-20K"/>
+                                </constraints>
                                 <state key="normal" title="Convert">
                                     <color key="titleColor" red="0.39062809749999999" green="0.42296266859999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -69,14 +71,24 @@
                                     <action selector="onConvertButtonPressed:" destination="Z42-jT-PgE" eventType="touchUpInside" id="jCG-JH-7mI"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HS0-kA-BAa">
-                                <rect key="frame" x="159" y="528" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HS0-kA-BAa">
+                                <rect key="frame" x="60" y="588" width="294" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DKW-56-I64"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.68595319260811549" green="1" blue="0.77336178806620204" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="X9R-vg-6ee" firstAttribute="trailing" secondItem="oSp-NA-ebB" secondAttribute="trailing" constant="60" id="3nl-ef-5Zv"/>
+                            <constraint firstItem="X9R-vg-6ee" firstAttribute="bottom" secondItem="oSp-NA-ebB" secondAttribute="bottom" constant="81" id="9GO-mp-vRs"/>
+                            <constraint firstItem="X9R-vg-6ee" firstAttribute="trailing" secondItem="HS0-kA-BAa" secondAttribute="trailing" constant="60" id="LPU-5G-dVt"/>
+                            <constraint firstItem="HS0-kA-BAa" firstAttribute="leading" secondItem="X9R-vg-6ee" secondAttribute="leading" constant="60" id="VKc-96-bNN"/>
+                            <constraint firstItem="oSp-NA-ebB" firstAttribute="top" secondItem="HS0-kA-BAa" secondAttribute="bottom" constant="44" id="dEe-Y8-bBu"/>
+                            <constraint firstItem="oSp-NA-ebB" firstAttribute="leading" secondItem="X9R-vg-6ee" secondAttribute="leading" constant="60" id="xt1-zG-Nyd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="X9R-vg-6ee"/>
                     </view>
                     <tabBarItem key="tabBarItem" selectedImage="pencil" catalog="system" systemItem="favorites" id="146-pW-aoG"/>
