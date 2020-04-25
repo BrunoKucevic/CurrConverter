@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import MessageUI
 
 class ConverterHistoryViewController: UIViewController {
     
@@ -56,7 +57,7 @@ extension ConverterHistoryViewController : UITableViewDataSource{
     
 }
 
-extension ConverterHistoryViewController : UITableViewDelegate{
+extension ConverterHistoryViewController : UITableViewDelegate, MFMailComposeViewControllerDelegate{
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .normal, title: "Delete") { (ac, view, success: (Bool) -> Void) in
@@ -71,7 +72,12 @@ extension ConverterHistoryViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let sendEmail = UIContextualAction(style: .normal, title: "Send email") { (ac, view, success: (Bool) -> Void) in
-            print("Email")
+            if MFMailComposeViewController.canSendMail(){
+                let mail = MFMailComposeViewController()
+                mail.mailComposeDelegate = self
+                mail.setToRecipients(["brunokucevic@gmail.com"])
+                mail.setMessageBody("Napravili ste konverziju iz HRK u \(self.currencyItemArray?[indexPath.row])", isHTML: true)
+            }
             success(true)
         }
         sendEmail.backgroundColor = .blue
