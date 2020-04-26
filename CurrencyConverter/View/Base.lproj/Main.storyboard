@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o1f-cX-M2F">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -43,11 +43,11 @@
             <objects>
                 <viewController id="Z42-jT-PgE" customClass="CurrencyConverterViewController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sPw-wn-1lU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUi-xV-qrP">
-                                <rect key="frame" x="60" y="-60" width="200" height="60"/>
+                                <rect key="frame" x="60" y="234" width="294" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Ib3-6O-A7E"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="qw3-bf-bvT"/>
@@ -56,15 +56,8 @@
                                 <color key="textColor" red="0.39062809749999999" green="0.42296266859999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dw9-nX-GIA">
-                                <rect key="frame" x="0.0" y="44" width="226" height="162"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="162" id="rOP-w2-8al"/>
-                                    <constraint firstAttribute="height" constant="162" id="sOv-J7-2e3"/>
-                                </constraints>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSp-NA-ebB">
-                                <rect key="frame" x="60" y="388" width="200" height="50"/>
+                                <rect key="frame" x="60" y="682" width="294" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RWR-IW-20K"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Sch-dT-G8p"/>
@@ -77,7 +70,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HS0-kA-BAa">
-                                <rect key="frame" x="60" y="294" width="200" height="50"/>
+                                <rect key="frame" x="60" y="588" width="294" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DKW-56-I64"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="ItB-Fx-8QH"/>
@@ -86,7 +79,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convert currency into HRK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLg-g7-EH3">
-                                <rect key="frame" x="60" y="-187" width="200" height="83"/>
+                                <rect key="frame" x="60" y="107" width="294" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="83" id="Qdr-Ri-KbX"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="83" id="VkO-Rs-UMx"/>
@@ -95,20 +88,23 @@
                                 <color key="textColor" red="0.39062809752445293" green="0.42296266858777154" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dw9-nX-GIA">
+                                <rect key="frame" x="60" y="330" width="294" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.68595319260811549" green="1" blue="0.77336178806620204" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oSp-NA-ebB" firstAttribute="leading" secondItem="X9R-vg-6ee" secondAttribute="leading" constant="60" id="0BE-6A-6LS"/>
-                            <constraint firstItem="X9R-vg-6ee" firstAttribute="trailing" secondItem="dw9-nX-GIA" secondAttribute="trailing" id="9tu-J0-SD8"/>
-                            <constraint firstItem="dw9-nX-GIA" firstAttribute="top" secondItem="iUi-xV-qrP" secondAttribute="bottom" constant="44" id="CGq-r9-32Y"/>
-                            <constraint firstItem="dw9-nX-GIA" firstAttribute="leading" secondItem="X9R-vg-6ee" secondAttribute="leading" id="GBQ-TA-UXq"/>
+                            <constraint firstItem="dw9-nX-GIA" firstAttribute="top" secondItem="iUi-xV-qrP" secondAttribute="bottom" constant="36" id="CpQ-Ga-sa1"/>
+                            <constraint firstItem="dw9-nX-GIA" firstAttribute="leading" secondItem="X9R-vg-6ee" secondAttribute="leading" constant="60" id="FRZ-FV-e8k"/>
+                            <constraint firstItem="X9R-vg-6ee" firstAttribute="trailing" secondItem="dw9-nX-GIA" secondAttribute="trailing" constant="60" id="ItX-u0-gaP"/>
                             <constraint firstItem="JLg-g7-EH3" firstAttribute="leading" secondItem="X9R-vg-6ee" secondAttribute="leading" constant="60" id="THq-W6-ZfH"/>
                             <constraint firstItem="X9R-vg-6ee" firstAttribute="trailing" secondItem="oSp-NA-ebB" secondAttribute="trailing" constant="60" id="ZTN-tq-KMf"/>
                             <constraint firstItem="HS0-kA-BAa" firstAttribute="leading" secondItem="X9R-vg-6ee" secondAttribute="leading" constant="60" id="Zep-Ke-vxS"/>
                             <constraint firstItem="iUi-xV-qrP" firstAttribute="top" secondItem="JLg-g7-EH3" secondAttribute="bottom" constant="44" id="asH-gK-jF5"/>
                             <constraint firstItem="oSp-NA-ebB" firstAttribute="top" secondItem="HS0-kA-BAa" secondAttribute="bottom" constant="44" id="cS9-4M-435"/>
                             <constraint firstItem="X9R-vg-6ee" firstAttribute="trailing" secondItem="JLg-g7-EH3" secondAttribute="trailing" constant="60" id="cTO-Ys-WY4"/>
-                            <constraint firstItem="HS0-kA-BAa" firstAttribute="top" secondItem="dw9-nX-GIA" secondAttribute="bottom" constant="88" id="iDU-WM-OhV"/>
+                            <constraint firstItem="HS0-kA-BAa" firstAttribute="top" secondItem="dw9-nX-GIA" secondAttribute="bottom" constant="42" id="ckV-oL-vul"/>
                             <constraint firstItem="iUi-xV-qrP" firstAttribute="leading" secondItem="X9R-vg-6ee" secondAttribute="leading" constant="60" id="upA-TM-Oab"/>
                             <constraint firstItem="X9R-vg-6ee" firstAttribute="trailing" secondItem="iUi-xV-qrP" secondAttribute="trailing" constant="60" id="xev-wr-5Fm"/>
                             <constraint firstItem="X9R-vg-6ee" firstAttribute="bottom" secondItem="oSp-NA-ebB" secondAttribute="bottom" constant="81" id="ye4-qC-K9Y"/>
